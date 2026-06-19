@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="2000trees">
+<meta name="theme-color" content="#F2EAD8">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<title>2000trees — My Lineup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F2EAD8;
+    --paper-dark:#E8DCC2;
+    --ink:#1A1714;
+    --ink-soft:#4A453F;
+    --pink:#D81159;
+    --blue:#1B4D8C;
+    --yellow:#F2B705;
+    --orange:#E8590C;
+    --green:#2D6A4F;
+    --violet:#6A3FA0;
+    --teal:#007F7A;
+    --red:#C81E1E;
+    --slate:#3D4759;
+    --gold:#B8860B;
+    --px-per-min: 1.65;
+    --col-width: 156px;
+    --axis-width: 54px;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background-color:var(--paper);
+    background-image: radial-gradient(circle, rgba(26,23,20,0.07) 1px, transparent 1.2px);
+    background-size: 7px 7px;
+    color:var(--ink);
+    font-family:'Archivo', sans-serif;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  ::selection{ background:var(--yellow); color:var(--ink); }
+
+  /* ---------- MASTHEAD ---------- */
+  .masthead{
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    gap:12px;
+    padding:22px 18px 14px;
+    position:relative;
+  }
+  .masthead h1{
+    font-family:'Anton', sans-serif;
+    font-weight:400;
+    font-size:clamp(34px, 8vw, 56px);
+    line-height:0.85;
+    margin:0;
+    letter-spacing:0.5px;
+    transform: rotate(-1.2deg);
+    text-shadow: 3px 3px 0 var(--yellow);
+  }
+  .masthead h1 span{ display:block; color:var(--pink); }
+  .masthead .subtitle{
+    font-family:'Space Mono', monospace;
+    font-size:11px;
+    letter-spacing:2px;
+    color:var(--ink-soft);
+    margin:6px 0 0;
+    text-transform:uppercase;
+  }
+  .stats-stub{
+    font-family:'Space Mono', monospace;
+    background:var(--ink);
+    color:var(--paper);
+    border-radius:3px;
+    padding:8px 14px;
+    text-align:center;
+    flex-shrink:0;
+    position:relative;
+    transform: rotate(2deg);
+  }
+  .stats-stub::after{
+    content:"";
+    position:absolute;
+    top:50%; left:-6px;
+    width:10px; height:10px;
+    background:var(--paper);
+    border-radius:50%;
+    transform:translateY(-50%);
+    box-shadow: 122px 0 0 var(--paper);
+  }
+  .stats-stub #pickCount{ display:block; font-size:24px; font-weight:700; line-height:1; }
+  .stats-stub small{ font-size:8px; letter-spacing:1.5px; opacity:0.8; }
+
+  .perf{
+    border-top: 2px dashed var(--ink);
+    opacity:0.35;
+    margin: 0 18px;
+  }
+
+  /* ---------- DAY TABS ---------- */
+  .day-tabs{
+    display:flex;
+    gap:8px;
+    padding:14px 18px 4px;
+  }
+  .day-tab{
+    font-family:'Anton', sans-serif;
+    font-size:15px;
+    letter-spacing:1px;
+    background:transparent;
+    border:2px solid var(--ink);
+    color:var(--ink);
+    padding:7px 14px 5px;
+    border-radius:3px;
+    cursor:pointer;
+    transition:transform .12s ease;
+  }
+  .day-tab:hover{ transform:translateY(-2px); }
+  .day-tab.active{
+    background:var(--ink);
+    color:var(--paper);
+  }
+
+  /* ---------- TOOLBAR ---------- */
+  .toolbar{
+    display:flex;
+    gap:10px;
+    padding:10px 18px;
+    flex-wrap:wrap;
+  }
+  #searchInput{
+    flex:1;
+    min-width:160px;
+    font-family:'Archivo', sans-serif;
+    font-size:14px;
+    padding:9px 12px;
+    border:2px solid var(--ink);
+    border-radius:3px;
+    background:var(--paper);
+    color:var(--ink);
+  }
+  #searchInput::placeholder{ color:var(--ink-soft); }
+  #searchInput:focus{ outline:3px solid var(--yellow); }
+  #clearPicks{
+    font-family:'Space Mono', monospace;
+    font-size:11px;
+    letter-spacing:1px;
+    background:var(--paper);
+    border:2px solid var(--ink-soft);
+    color:var(--ink-soft);
+    padding:8px 12px;
+    border-radius:3px;
+    cursor:pointer;
+    text-transform:uppercase;
+  }
+  #clearPicks:hover{ border-color:var(--red); color:var(--red); }
+  #clearPicks:focus-visible, .day-tab:focus-visible, .legend-chip:focus-visible{ outline:3px solid var(--yellow); outline-offset:1px; }
+
+  /* ---------- CLASH BANNER ---------- */
+  .clash-banner{
+    margin:0 18px 10px;
+    padding:10px 14px;
+    background:var(--red);
+    color:#fff;
+    font-family:'Space Mono', monospace;
+    font-size:12.5px;
+    border-radius:3px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .clash-banner.hidden{ display:none; }
+
+  /* ---------- LEGEND ---------- */
+  .legend{
+    display:flex;
+    gap:6px;
+    padding:0 18px 12px;
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+  }
+  .legend-chip{
+    flex-shrink:0;
+    display:flex;
+    align-items:center;
+    gap:6px;
+    font-family:'Space Mono', monospace;
+    font-size:10.5px;
+    letter-spacing:0.3px;
+    background:var(--paper-dark);
+    border:1.5px solid var(--ink);
+    border-radius:20px;
+    padding:4px 10px 4px 6px;
+    white-space:nowrap;
+    cursor:pointer;
+    opacity:1;
+    transition:opacity .15s ease;
+  }
+  .legend-chip.dimmed{ opacity:0.3; }
+  .legend-dot{ width:10px; height:10px; border-radius:50%; flex-shrink:0; border:1px solid rgba(0,0,0,0.3); }
+
+  /* ---------- SCHEDULE ---------- */
+  .schedule-wrap{
+    display:flex;
+    margin:0 18px 100px;
+    border:2.5px solid var(--ink);
+    border-radius:4px;
+    overflow:hidden;
+    background:var(--paper);
+  }
+  .time-axis{
+    flex-shrink:0;
+    width:var(--axis-width);
+    background:var(--paper-dark);
+    border-right:2.5px solid var(--ink);
+    position:relative;
+  }
+  .time-axis .axis-spacer{
+    height:46px;
+    border-bottom:2.5px solid var(--ink);
+  }
+  .hour-label{
+    position:absolute;
+    left:0; right:0;
+    font-family:'Space Mono', monospace;
+    font-size:10px;
+    color:var(--ink-soft);
+    text-align:center;
+    transform:translateY(-50%);
+  }
+  .stage-scroll{
+    overflow-x:auto;
+    overflow-y:hidden;
+    flex:1;
+    -webkit-overflow-scrolling:touch;
+  }
+  .stage-columns{
+    display:flex;
+    position:relative;
+  }
+  .stage-col{
+    flex-shrink:0;
+    width:var(--col-width);
+    border-right:1.5px solid rgba(26,23,20,0.18);
+  }
+  .stage-col:last-child{ border-right:none; }
+  .stage-col-header{
+    height:46px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    font-family:'Anton', sans-serif;
+    font-size:12.5px;
+    letter-spacing:0.5px;
+    line-height:1.05;
+    padding:4px 6px;
+    border-bottom:2.5px solid var(--ink);
+    position:sticky;
+    top:0;
+    z-index:5;
+  }
+  .stage-col-body{
+    position:relative;
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent,
+      transparent 98.9px,
+      rgba(26,23,20,0.1) 98.9px,
+      rgba(26,23,20,0.1) 100px
+    );
+  }
+
+  .event-block{
+    position:absolute;
+    left:3px; right:3px;
+    border-radius:3px;
+    padding:4px 6px 3px;
+    overflow:hidden;
+    cursor:pointer;
+    color:#fff;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.2);
+    transition: transform .1s ease, box-shadow .1s ease;
+  }
+  .event-block:hover{ transform: scale(1.025); z-index:3; box-shadow:0 2px 6px rgba(0,0,0,0.35); }
+  .event-block:focus-visible{ outline:3px solid var(--yellow); outline-offset:1px; z-index:4;}
+  .event-band{
+    font-family:'Archivo', sans-serif;
+    font-weight:700;
+    font-size:11.5px;
+    line-height:1.15;
+    display:-webkit-box;
+    -webkit-line-clamp:3;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+  }
+  .event-time{
+    font-family:'Space Mono', monospace;
+    font-size:9px;
+    opacity:0.85;
+    margin-top:2px;
+    display:block;
+  }
+  .event-block.dimmed{ opacity:0.18; }
+  .event-block.tbc{
+    cursor:default;
+    color:var(--ink-soft);
+    background:repeating-linear-gradient(45deg, rgba(26,23,20,0.06), rgba(26,23,20,0.06) 6px, rgba(26,23,20,0.12) 6px, rgba(26,23,20,0.12) 12px) !important;
+    box-shadow:none;
+  }
+  .event-block.tbc:hover{ transform:none; }
+  .event-block.tbc .event-band{ font-style:italic; font-weight:600; }
+
+  .event-block.picked{
+    background:var(--paper) !important;
+    color:var(--ink) !important;
+    border:2px dashed var(--ink);
+    box-shadow: 2px 2px 0 rgba(26,23,20,0.25);
+  }
+  .event-block.picked .event-time{ opacity:0.7; }
+  .event-block.picked::after{
+    content:"✓ GOING";
+    position:absolute;
+    top:2px; right:4px;
+    font-family:'Space Mono', monospace;
+    font-size:8px;
+    font-weight:700;
+    letter-spacing:0.5px;
+    color:var(--pink);
+    transform: rotate(-8deg);
+  }
+  .event-block.picked.clash{
+    border-color:var(--red);
+  }
+  .event-block.picked.clash::after{
+    content:"⚡ CLASH";
+    color:var(--red);
+  }
+
+  /* ---------- MY LINEUP PANEL ---------- */
+  .lineup-fab{
+    position:fixed;
+    bottom:18px; right:18px;
+    z-index:30;
+    font-family:'Anton', sans-serif;
+    font-size:14px;
+    letter-spacing:0.5px;
+    background:var(--pink);
+    color:#fff;
+    border:2.5px solid var(--ink);
+    border-radius:30px;
+    padding:12px 18px;
+    cursor:pointer;
+    box-shadow:3px 3px 0 var(--ink);
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .lineup-fab:active{ transform:translate(2px,2px); box-shadow:1px 1px 0 var(--ink); }
+  .lineup-fab #fabCount{
+    background:var(--ink);
+    color:#fff;
+    border-radius:50%;
+    width:22px; height:22px;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Space Mono', monospace;
+    font-size:11px;
+  }
+
+  .lineup-panel{
+    position:fixed;
+    top:0; right:0;
+    width:min(380px, 92vw);
+    height:100%;
+    background:var(--paper);
+    border-left:2.5px solid var(--ink);
+    z-index:40;
+    transform:translateX(100%);
+    transition:transform .25s ease;
+    display:flex;
+    flex-direction:column;
+    box-shadow:-4px 0 16px rgba(0,0,0,0.25);
+  }
+  .lineup-panel.open{ transform:translateX(0); }
+  .lineup-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px 18px 12px;
+    border-bottom:2.5px dashed var(--ink);
+  }
+  .lineup-header h2{
+    font-family:'Anton', sans-serif;
+    font-size:24px;
+    margin:0;
+  }
+  #closeLineup{
+    background:none;
+    border:2px solid var(--ink);
+    border-radius:50%;
+    width:30px; height:30px;
+    font-size:14px;
+    cursor:pointer;
+  }
+  .lineup-list{
+    flex:1;
+    overflow-y:auto;
+    padding:14px 18px 30px;
+  }
+  .lineup-day-group{ margin-bottom:18px; }
+  .lineup-day-title{
+    font-family:'Space Mono', monospace;
+    font-size:11px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    border-bottom:1.5px solid var(--ink-soft);
+    padding-bottom:4px;
+    margin-bottom:8px;
+  }
+  .lineup-item{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:8px 0;
+    border-bottom:1px dashed rgba(26,23,20,0.25);
+  }
+  .lineup-dot{ width:11px; height:11px; border-radius:50%; flex-shrink:0; }
+  .lineup-item-info{ flex:1; min-width:0; }
+  .lineup-item-band{ font-weight:700; font-size:13.5px; }
+  .lineup-item-meta{ font-family:'Space Mono', monospace; font-size:10.5px; color:var(--ink-soft); }
+  .lineup-item.clash .lineup-item-meta{ color:var(--red); }
+  .lineup-remove{
+    background:none;
+    border:none;
+    color:var(--ink-soft);
+    font-size:16px;
+    cursor:pointer;
+    padding:2px 6px;
+  }
+  .lineup-remove:hover{ color:var(--red); }
+  .lineup-empty{
+    font-family:'Space Mono', monospace;
+    font-size:12.5px;
+    color:var(--ink-soft);
+    line-height:1.6;
+    margin-top:20px;
+  }
+  .lineup-header-actions{ display:flex; align-items:center; gap:8px; }
+  .export-btn{
+    font-family:'Space Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.5px;
+    background:var(--yellow);
+    border:2px solid var(--ink);
+    color:var(--ink);
+    padding:7px 10px;
+    border-radius:20px;
+    cursor:pointer;
+    text-transform:uppercase;
+  }
+  .export-btn:hover{ background:var(--ink); color:var(--paper); }
+
+  .overlay{
+    position:fixed; inset:0;
+    background:rgba(26,23,20,0.4);
+    z-index:35;
+    display:none;
+  }
+  .overlay.show{ display:block; }
+
+  .export-overlay{
+    position:fixed; inset:0;
+    background:rgba(26,23,20,0.55);
+    z-index:45;
+    display:none;
+  }
+  .export-overlay.show{ display:block; }
+  .export-modal{
+    position:fixed;
+    top:50%; left:50%;
+    transform:translate(-50%, -50%);
+    width:min(440px, 90vw);
+    max-height:82vh;
+    background:var(--paper);
+    border:2.5px solid var(--ink);
+    border-radius:6px;
+    z-index:50;
+    display:none;
+    flex-direction:column;
+    padding:18px;
+    box-shadow:4px 4px 0 var(--ink);
+  }
+  .export-modal.show{ display:flex; }
+  .export-modal-header{ display:flex; align-items:center; justify-content:space-between; margin-bottom:8px; }
+  .export-modal-header h3{ font-family:'Anton', sans-serif; font-size:19px; margin:0; }
+  #closeExport{ background:none; border:2px solid var(--ink); border-radius:50%; width:28px; height:28px; cursor:pointer; font-size:13px; flex-shrink:0; }
+  .export-hint{ font-family:'Archivo', sans-serif; font-size:12px; color:var(--ink-soft); margin:0 0 10px; line-height:1.4; }
+  #exportText{
+    flex:1;
+    min-height:220px;
+    resize:vertical;
+    font-family:'Space Mono', monospace;
+    font-size:11.5px;
+    line-height:1.5;
+    padding:10px;
+    border:1.5px dashed var(--ink-soft);
+    border-radius:4px;
+    background:var(--paper-dark);
+    color:var(--ink);
+    white-space:pre;
+  }
+  .export-actions{ margin-top:10px; display:flex; justify-content:flex-end; }
+  .copy-btn{
+    font-family:'Anton', sans-serif;
+    font-size:13px;
+    letter-spacing:0.5px;
+    background:var(--pink);
+    color:#fff;
+    border:2px solid var(--ink);
+    border-radius:20px;
+    padding:9px 16px;
+    cursor:pointer;
+  }
+  .copy-btn:active{ transform:translate(1px,1px); }
+  .export-status{
+    font-family:'Space Mono', monospace;
+    font-size:11px;
+    color:var(--green);
+    text-align:center;
+    margin:8px 0 0;
+    min-height:14px;
+  }
+
+  footer{
+    text-align:center;
+    font-family:'Space Mono', monospace;
+    font-size:10px;
+    color:var(--ink-soft);
+    padding:10px 18px 26px;
+  }
+
+  @media (max-width: 540px){
+    :root{ --col-width:128px; --axis-width:44px; }
+    .masthead h1{ font-size:34px; }
+    .event-band{ font-size:10.5px; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ transition:none !important; animation:none !important; }
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div>
+    <h1>2000<span>TREES</span></h1>
+    <p class="subtitle">Your lineup · Thu 9 – Sat 11 July</p>
+  </div>
+  <div class="stats-stub">
+    <span id="pickCount">0</span>
+    <small>BANDS&nbsp;PICKED</small>
+  </div>
+</header>
+<div class="perf"></div>
+
+<nav class="day-tabs" id="dayTabs"></nav>
+
+<div class="toolbar">
+  <input id="searchInput" type="text" placeholder="🔎 Find a band…" autocomplete="off">
+  <button id="clearPicks">Clear my picks</button>
+</div>
+
+<div class="clash-banner hidden" id="clashBanner"></div>
+
+<div class="legend" id="legend"></div>
+
+<div class="schedule-wrap">
+  <div class="time-axis" id="timeAxis"></div>
+  <div class="stage-scroll" id="stageScroll">
+    <div class="stage-columns" id="stageColumns"></div>
+  </div>
+</div>
+
+<footer>Tap any slot to mark it as "going" — your picks are saved automatically. TBC slots can't be picked yet.</footer>
+
+<button class="lineup-fab" id="lineupToggle">🎟 MY LINEUP <span id="fabCount">0</span></button>
+<div class="overlay" id="overlay"></div>
+<aside class="lineup-panel" id="lineupPanel">
+  <div class="lineup-header">
+    <h2>My Lineup</h2>
+    <div class="lineup-header-actions">
+      <button id="exportBtn" class="export-btn">⇪ Export</button>
+      <button id="closeLineup" aria-label="Close">✕</button>
+    </div>
+  </div>
+  <div class="lineup-list" id="lineupList"></div>
+</aside>
+
+<div class="export-overlay" id="exportOverlay"></div>
+<div class="export-modal" id="exportModal" role="dialog" aria-label="Export lineup">
+  <div class="export-modal-header">
+    <h3>Export your lineup</h3>
+    <button id="closeExport" aria-label="Close">✕</button>
+  </div>
+  <p class="export-hint">Copy this into Notes, Messages, or wherever — handy as a backup of your picks.</p>
+  <textarea id="exportText" readonly></textarea>
+  <div class="export-actions">
+    <button id="copyExportBtn" class="copy-btn">📋 Copy to clipboard</button>
+  </div>
+  <p class="export-status" id="exportStatus" aria-live="polite"></p>
+</div>
+
+<script id="lineup-data" type="application/json">{"days": ["Thursday 9th July", "Friday 10th July", "Saturday 11th July"], "stages": ["Main Stage", "The Cave", "The Axiom", "The Marshall Stage", "Forest Sessions", "The Word", "Camp Turner", "Camp Frabbit", "UTB Manchester Campsite Stage", "V.I.Paradise Stage (VIP Campsite)"], "events": [{"stage": "Main Stage", "day": "Thursday 9th July", "band": "Buds.", "time": "11:00 - 11:30", "start": 660, "end": 690}, {"stage": "Main Stage", "day": "Thursday 9th July", "band": "Melanie Baker", "time": "12:00 - 12:30", "start": 720, "end": 750}, {"stage": "Main Stage", "day": "Thursday 9th July", "band": "Saint Agnes", "time": "13:00 - 13:30", "start": 780, "end": 810}, {"stage": "Main Stage", "day": "Thursday 9th July", "band": "The Skinner Brothers", "time": "14:00 - 14:30", "start": 840, "end": 870}, {"stage": "Main Stage", "day": "Thursday 9th July", "band": "Mariachi El Bronx", "time": "15:10 - 15:55", "start": 910, "end": 955}, {"stage": "Main Stage", "day": "Thursday 9th July", "band": "Tigercub", "time": "16:30 - 17:15", "start": 990, "end": 1035}, {"stage": "Main Stage", "day": "Thursday 9th July", "band": "Bad Nerves", "time": "17:55 - 18:45", "start": 1075, "end": 1125}, {"stage": "Main Stage", "day": "Thursday 9th July", "band": "Pup", "time": "19:45 - 20:35", "start": 1185, "end": 1235}, {"stage": "Main Stage", "day": "Thursday 9th July", "band": "Alkaline Trio", "time": "21:40 - 23:00", "start": 1300, "end": 1380}, {"stage": "Main Stage", "day": "Friday 10th July", "band": "Suds", "time": "11:00 - 11:30", "start": 660, "end": 690}, {"stage": "Main Stage", "day": "Friday 10th July", "band": "Twat Union", "time": "12:00 - 12:30", "start": 720, "end": 750}, {"stage": "Main Stage", "day": "Friday 10th July", "band": "Beauty School", "time": "13:00 - 13:30", "start": 780, "end": 810}, {"stage": "Main Stage", "day": "Friday 10th July", "band": "Higher Power", "time": "14:00 - 14:35", "start": 840, "end": 875}, {"stage": "Main Stage", "day": "Friday 10th July", "band": "House of Protection", "time": "15:05 - 15:40", "start": 905, "end": 940}, {"stage": "Main Stage", "day": "Friday 10th July", "band": "The Scratch", "time": "16:15 - 17:00", "start": 975, "end": 1020}, {"stage": "Main Stage", "day": "Friday 10th July", "band": "Lambrini Girls", "time": "17:40 - 18:30", "start": 1060, "end": 1110}, {"stage": "Main Stage", "day": "Friday 10th July", "band": "Sunny Day Real Estate", "time": "19:30 - 20:30", "start": 1170, "end": 1230}, {"stage": "Main Stage", "day": "Friday 10th July", "band": "Funeral For A Friend", "time": "21:40 - 23:00", "start": 1300, "end": 1380}, {"stage": "Main Stage", "day": "Saturday 11th July", "band": "Carsick", "time": "11:00 - 11:30", "start": 660, "end": 690}, {"stage": "Main Stage", "day": "Saturday 11th July", "band": "Frozemode", "time": "12:00 - 12:30", "start": 720, "end": 750}, {"stage": "Main Stage", "day": "Saturday 11th July", "band": "Battlesnake", "time": "13:00 - 13:30", "start": 780, "end": 810}, {"stage": "Main Stage", "day": "Saturday 11th July", "band": "Heart Attack Man", "time": "14:00 - 14:30", "start": 840, "end": 870}, {"stage": "Main Stage", "day": "Saturday 11th July", "band": "Pinkshift", "time": "15:00 - 15:35", "start": 900, "end": 935}, {"stage": "Main Stage", "day": "Saturday 11th July", "band": "Mouth Culture", "time": "16:10 - 17:00", "start": 970, "end": 1020}, {"stage": "Main Stage", "day": "Saturday 11th July", "band": "Marmozets", "time": "17:40 - 18:30", "start": 1060, "end": 1110}, {"stage": "Main Stage", "day": "Saturday 11th July", "band": "Glassjaw", "time": "19:30 - 20:30", "start": 1170, "end": 1230}, {"stage": "Main Stage", "day": "Saturday 11th July", "band": "Neck Deep", "time": "21:40 - 23:00", "start": 1300, "end": 1380}, {"stage": "The Cave", "day": "Thursday 9th July", "band": "Silo", "time": "11:00 - 11:30", "start": 660, "end": 690}, {"stage": "The Cave", "day": "Thursday 9th July", "band": "Long Goodbye", "time": "12:00 - 12:30", "start": 720, "end": 750}, {"stage": "The Cave", "day": "Thursday 9th July", "band": "Hammok", "time": "13:00 - 13:30", "start": 780, "end": 810}, {"stage": "The Cave", "day": "Thursday 9th July", "band": "Still In Love", "time": "14:00 - 14:30", "start": 840, "end": 870}, {"stage": "The Cave", "day": "Thursday 9th July", "band": "Stress Positions", "time": "15:00 - 15:50", "start": 900, "end": 950}, {"stage": "The Cave", "day": "Thursday 9th July", "band": "Bleech 9:3", "time": "16:35 - 17:10", "start": 995, "end": 1030}, {"stage": "The Cave", "day": "Thursday 9th July", "band": "truck violence", "time": "18:00 - 18:40", "start": 1080, "end": 1120}, {"stage": "The Cave", "day": "Thursday 9th July", "band": "Delilah Bon", "time": "19:45 - 20:35", "start": 1185, "end": 1235}, {"stage": "The Cave", "day": "Thursday 9th July", "band": "Static Dress", "time": "21:40 - 22:40", "start": 1300, "end": 1360}, {"stage": "The Cave", "day": "Thursday 9th July", "band": "Silent Disco", "time": "23:00 - 03:00", "start": 1380, "end": 1620}, {"stage": "The Cave", "day": "Friday 10th July", "band": "Prodigal", "time": "11:00 - 11:30", "start": 660, "end": 690}, {"stage": "The Cave", "day": "Friday 10th July", "band": "Bratakus", "time": "12:00 - 12:30", "start": 720, "end": 750}, {"stage": "The Cave", "day": "Friday 10th July", "band": "God Complex", "time": "13:00 - 13:30", "start": 780, "end": 810}, {"stage": "The Cave", "day": "Friday 10th July", "band": "Reclus.E", "time": "14:00 - 14:30", "start": 840, "end": 870}, {"stage": "The Cave", "day": "Friday 10th July", "band": "Overgrown", "time": "15:05 - 15:35", "start": 905, "end": 935}, {"stage": "The Cave", "day": "Friday 10th July", "band": "Saturdays At Your Place", "time": "16:20 - 16:55", "start": 980, "end": 1015}, {"stage": "The Cave", "day": "Friday 10th July", "band": "Banks Arcade", "time": "17:45 - 18:30", "start": 1065, "end": 1110}, {"stage": "The Cave", "day": "Friday 10th July", "band": "Militarie Gun", "time": "19:35 - 20:25", "start": 1175, "end": 1225}, {"stage": "The Cave", "day": "Friday 10th July", "band": "Cancer Bats", "time": "21:40 - 22:40", "start": 1300, "end": 1360}, {"stage": "The Cave", "day": "Friday 10th July", "band": "Silent Disco", "time": "23:00 - 03:00", "start": 1380, "end": 1620}, {"stage": "The Cave", "day": "Saturday 11th July", "band": "Lickshot", "time": "11:00 - 11:30", "start": 660, "end": 690}, {"stage": "The Cave", "day": "Saturday 11th July", "band": "Luxuary Apartments", "time": "12:00 - 12:30", "start": 720, "end": 750}, {"stage": "The Cave", "day": "Saturday 11th July", "band": "Thorns", "time": "13:00 - 13:30", "start": 780, "end": 810}, {"stage": "The Cave", "day": "Saturday 11th July", "band": "Bodyweb", "time": "14:00 - 14:30", "start": 840, "end": 870}, {"stage": "The Cave", "day": "Saturday 11th July", "band": "Dead Pioneers", "time": "15:00 - 15:35", "start": 900, "end": 935}, {"stage": "The Cave", "day": "Saturday 11th July", "band": "Petrol Girls", "time": "16:15 - 16:55", "start": 975, "end": 1015}, {"stage": "The Cave", "day": "Saturday 11th July", "band": "I Am The Avalanche", "time": "17:45 - 18:30", "start": 1065, "end": 1110}, {"stage": "The Cave", "day": "Saturday 11th July", "band": "The Xcerts", "time": "19:30 - 20:30", "start": 1170, "end": 1230}, {"stage": "The Cave", "day": "Saturday 11th July", "band": "High Vis", "time": "21:40 - 22:40", "start": 1300, "end": 1360}, {"stage": "The Cave", "day": "Saturday 11th July", "band": "Silent Disco", "time": "23:00 - 03:00", "start": 1380, "end": 1620}, {"stage": "The Axiom", "day": "Thursday 9th July", "band": "Tooth", "time": "11:30 - 12:00", "start": 690, "end": 720}, {"stage": "The Axiom", "day": "Thursday 9th July", "band": "Lonesome", "time": "12:30 - 13:00", "start": 750, "end": 780}, {"stage": "The Axiom", "day": "Thursday 9th July", "band": "Happydaze", "time": "13:30 - 14:00", "start": 810, "end": 840}, {"stage": "The Axiom", "day": "Thursday 9th July", "band": "Cowboy Hunters", "time": "14:30 - 15:00", "start": 870, "end": 900}, {"stage": "The Axiom", "day": "Thursday 9th July", "band": "Coach Party", "time": "15:55 - 16:30", "start": 955, "end": 990}, {"stage": "The Axiom", "day": "Thursday 9th July", "band": "Pool Kids", "time": "17:15 - 17:55", "start": 1035, "end": 1075}, {"stage": "The Axiom", "day": "Thursday 9th July", "band": "The Bronx", "time": "18:50 - 19:40", "start": 1130, "end": 1180}, {"stage": "The Axiom", "day": "Thursday 9th July", "band": "Superheaven", "time": "20:40 - 21:35", "start": 1240, "end": 1295}, {"stage": "The Axiom", "day": "Thursday 9th July", "band": "Silent Disco", "time": "23:00 - 03:00", "start": 1380, "end": 1620}, {"stage": "The Axiom", "day": "Friday 10th July", "band": "Guillotine", "time": "11:30 - 12:00", "start": 690, "end": 720}, {"stage": "The Axiom", "day": "Friday 10th July", "band": "Grandmas House", "time": "12:30 - 13:00", "start": 750, "end": 780}, {"stage": "The Axiom", "day": "Friday 10th July", "band": "Footballhead", "time": "13:30 - 14:00", "start": 810, "end": 840}, {"stage": "The Axiom", "day": "Friday 10th July", "band": "Nervus", "time": "14:35 - 15:05", "start": 875, "end": 905}, {"stage": "The Axiom", "day": "Friday 10th July", "band": "Cosmic Psychos", "time": "15:40 - 16:15", "start": 940, "end": 975}, {"stage": "The Axiom", "day": "Friday 10th July", "band": "Free Throw", "time": "17:00 - 17:40", "start": 1020, "end": 1060}, {"stage": "The Axiom", "day": "Friday 10th July", "band": "Mallory Knox", "time": "18:35 - 19:25", "start": 1115, "end": 1165}, {"stage": "The Axiom", "day": "Friday 10th July", "band": "Arcane Roots", "time": "20:35 - 21:35", "start": 1235, "end": 1295}, {"stage": "The Axiom", "day": "Friday 10th July", "band": "Silent Disco", "time": "23:00 - 03:00", "start": 1380, "end": 1620}, {"stage": "The Axiom", "day": "Saturday 11th July", "band": "PeaCH", "time": "11:30 - 12:00", "start": 690, "end": 720}, {"stage": "The Axiom", "day": "Saturday 11th July", "band": "Lakes", "time": "12:30 - 13:00", "start": 750, "end": 780}, {"stage": "The Axiom", "day": "Saturday 11th July", "band": "Club Brat", "time": "13:30 - 14:00", "start": 810, "end": 840}, {"stage": "The Axiom", "day": "Saturday 11th July", "band": "Lastelle", "time": "14:30 - 15:00", "start": 870, "end": 900}, {"stage": "The Axiom", "day": "Saturday 11th July", "band": "Have Mercy", "time": "15:35 - 16:10", "start": 935, "end": 970}, {"stage": "The Axiom", "day": "Saturday 11th July", "band": "As Everything Unfolds", "time": "17:00 - 17:40", "start": 1020, "end": 1060}, {"stage": "The Axiom", "day": "Saturday 11th July", "band": "HO99O9", "time": "18:35 - 19:25", "start": 1115, "end": 1165}, {"stage": "The Axiom", "day": "Saturday 11th July", "band": "Dinosaur Pile Up", "time": "20:35 - 21:35", "start": 1235, "end": 1295}, {"stage": "The Axiom", "day": "Saturday 11th July", "band": "Silent Disco", "time": "23:00 - 03:00", "start": 1380, "end": 1620}, {"stage": "The Marshall Stage", "day": "Thursday 9th July", "band": "Highdrive", "time": "10:30 - 11:00", "start": 630, "end": 660}, {"stage": "The Marshall Stage", "day": "Thursday 9th July", "band": "Goo", "time": "11:30 - 12:00", "start": 690, "end": 720}, {"stage": "The Marshall Stage", "day": "Thursday 9th July", "band": "Ashaine White", "time": "12:30 - 13:00", "start": 750, "end": 780}, {"stage": "The Marshall Stage", "day": "Thursday 9th July", "band": "Adore", "time": "13:30 - 14:00", "start": 810, "end": 840}, {"stage": "The Marshall Stage", "day": "Thursday 9th July", "band": "snake eyes", "time": "14:30 - 15:00", "start": 870, "end": 900}, {"stage": "The Marshall Stage", "day": "Thursday 9th July", "band": "Lemonsuckr", "time": "16:00 - 16:30", "start": 960, "end": 990}, {"stage": "The Marshall Stage", "day": "Thursday 9th July", "band": "SMUG LLC", "time": "17:20 - 17:50", "start": 1040, "end": 1070}, {"stage": "The Marshall Stage", "day": "Thursday 9th July", "band": "So Good", "time": "19:00 - 19:30", "start": 1140, "end": 1170}, {"stage": "The Marshall Stage", "day": "Thursday 9th July", "band": "The Dirty Nil", "time": "20:40 - 21:35", "start": 1240, "end": 1295}, {"stage": "The Marshall Stage", "day": "Friday 10th July", "band": "IOTA", "time": "10:30 - 11:00", "start": 630, "end": 660}, {"stage": "The Marshall Stage", "day": "Friday 10th July", "band": "Aerial Salad", "time": "11:30 - 12:00", "start": 690, "end": 720}, {"stage": "The Marshall Stage", "day": "Friday 10th July", "band": "Glass Bridges", "time": "12:30 - 13:00", "start": 750, "end": 780}, {"stage": "The Marshall Stage", "day": "Friday 10th July", "band": "Knives", "time": "13:30 - 14:00", "start": 810, "end": 840}, {"stage": "The Marshall Stage", "day": "Friday 10th July", "band": "AILSHA", "time": "14:35 - 15:05", "start": 875, "end": 905}, {"stage": "The Marshall Stage", "day": "Friday 10th July", "band": "Call Me Amour", "time": "15:40 - 16:10", "start": 940, "end": 970}, {"stage": "The Marshall Stage", "day": "Friday 10th July", "band": "ElliS-D", "time": "17:05 - 17:35", "start": 1025, "end": 1055}, {"stage": "The Marshall Stage", "day": "Friday 10th July", "band": "Jayler", "time": "18:35 - 19:20", "start": 1115, "end": 1160}, {"stage": "The Marshall Stage", "day": "Friday 10th July", "band": "Tropic Gold", "time": "20:40 - 21:25", "start": 1240, "end": 1285}, {"stage": "The Marshall Stage", "day": "Saturday 11th July", "band": "Ain't", "time": "10:30 - 11:00", "start": 630, "end": 660}, {"stage": "The Marshall Stage", "day": "Saturday 11th July", "band": "THISTLE.", "time": "11:30 - 12:00", "start": 690, "end": 720}, {"stage": "The Marshall Stage", "day": "Saturday 11th July", "band": "East Exchange", "time": "12:30 - 13:00", "start": 750, "end": 780}, {"stage": "The Marshall Stage", "day": "Saturday 11th July", "band": "Bicurious", "time": "13:30 - 14:00", "start": 810, "end": 840}, {"stage": "The Marshall Stage", "day": "Saturday 11th July", "band": "Alpha Male Tea Party", "time": "14:30 - 15:00", "start": 870, "end": 900}, {"stage": "The Marshall Stage", "day": "Saturday 11th July", "band": "Gallus", "time": "15:35 - 16:05", "start": 935, "end": 965}, {"stage": "The Marshall Stage", "day": "Saturday 11th July", "band": "Kent Osbourne", "time": "17:05 - 17:35", "start": 1025, "end": 1055}, {"stage": "The Marshall Stage", "day": "Saturday 11th July", "band": "Big Truck", "time": "18:40 - 19:15", "start": 1120, "end": 1155}, {"stage": "The Marshall Stage", "day": "Saturday 11th July", "band": "Cody Frost", "time": "20:50 - 21:35", "start": 1250, "end": 1295}, {"stage": "Forest Sessions", "day": "Thursday 9th July", "band": "Yoga", "time": "09:00 - 09:45", "start": 540, "end": 585}, {"stage": "Forest Sessions", "day": "Thursday 9th July", "band": "Saint Senara", "time": "11:30 - 12:00", "start": 690, "end": 720}, {"stage": "Forest Sessions", "day": "Thursday 9th July", "band": "Night Swimming", "time": "12:30 - 13:00", "start": 750, "end": 780}, {"stage": "Forest Sessions", "day": "Thursday 9th July", "band": "Doss", "time": "13:30 - 14:00", "start": 810, "end": 840}, {"stage": "Forest Sessions", "day": "Thursday 9th July", "band": "Beauty Sleep", "time": "14:30 - 15:00", "start": 870, "end": 900}, {"stage": "Forest Sessions", "day": "Thursday 9th July", "band": "J'cuuzi", "time": "16:00 - 16:30", "start": 960, "end": 990}, {"stage": "Forest Sessions", "day": "Thursday 9th July", "band": "DeadWax", "time": "17:20 - 17:50", "start": 1040, "end": 1070}, {"stage": "Forest Sessions", "day": "Thursday 9th July", "band": "Native James", "time": "18:55 - 19:35", "start": 1135, "end": 1175}, {"stage": "Forest Sessions", "day": "Thursday 9th July", "band": "The Virginmarys", "time": "20:40 - 21:35", "start": 1240, "end": 1295}, {"stage": "Forest Sessions", "day": "Thursday 9th July", "band": "Hydro The Hero", "time": "22:15 - 23:00", "start": 1335, "end": 1380}, {"stage": "Forest Sessions", "day": "Thursday 9th July", "band": "Haggard Cat (Silent Disco Live)", "time": "23:45 - 00:35", "start": 1425, "end": 1475}, {"stage": "Forest Sessions", "day": "Friday 10th July", "band": "Yoga", "time": "09:00 - 09:45", "start": 540, "end": 585}, {"stage": "Forest Sessions", "day": "Friday 10th July", "band": "Solid Gold Fitness", "time": "10:30 - 11:15", "start": 630, "end": 675}, {"stage": "Forest Sessions", "day": "Friday 10th July", "band": "Truck", "time": "11:30 - 12:00", "start": 690, "end": 720}, {"stage": "Forest Sessions", "day": "Friday 10th July", "band": "Sans Froid", "time": "12:30 - 13:00", "start": 750, "end": 780}, {"stage": "Forest Sessions", "day": "Friday 10th July", "band": "Hotgirl", "time": "13:30 - 14:00", "start": 810, "end": 840}, {"stage": "Forest Sessions", "day": "Friday 10th July", "band": "SLAG", "time": "14:35 - 15:05", "start": 875, "end": 905}, {"stage": "Forest Sessions", "day": "Friday 10th July", "band": "Anthony Green", "time": "15:35 - 16:20", "start": 935, "end": 980}, {"stage": "Forest Sessions", "day": "Friday 10th July", "band": "MOULD", "time": "17:00 - 17:40", "start": 1020, "end": 1060}, {"stage": "Forest Sessions", "day": "Friday 10th July", "band": "Greywind", "time": "18:35 - 19:20", "start": 1115, "end": 1160}, {"stage": "Forest Sessions", "day": "Friday 10th July", "band": "The Skints", "time": "20:35 - 21:25", "start": 1235, "end": 1285}, {"stage": "Forest Sessions", "day": "Friday 10th July", "band": "ALT BLK ERA", "time": "22:15 - 23:00", "start": 1335, "end": 1380}, {"stage": "Forest Sessions", "day": "Friday 10th July", "band": "Battlesnake (Silent Disco Live)", "time": "23:45 - 00:45", "start": 1425, "end": 1485}, {"stage": "Forest Sessions", "day": "Saturday 11th July", "band": "Yoga", "time": "09:00 - 09:40", "start": 540, "end": 580}, {"stage": "Forest Sessions", "day": "Saturday 11th July", "band": "Solid Gold Fitness", "time": "10:30 - 11:15", "start": 630, "end": 675}, {"stage": "Forest Sessions", "day": "Saturday 11th July", "band": "TBA", "time": "11:30 - 12:00", "start": 690, "end": 720}, {"stage": "Forest Sessions", "day": "Saturday 11th July", "band": "A Forest", "time": "12:30 - 13:00", "start": 750, "end": 780}, {"stage": "Forest Sessions", "day": "Saturday 11th July", "band": "Vinnie Caruana", "time": "13:30 - 14:00", "start": 810, "end": 840}, {"stage": "Forest Sessions", "day": "Saturday 11th July", "band": "Scustin", "time": "14:30 - 15:00", "start": 870, "end": 900}, {"stage": "Forest Sessions", "day": "Saturday 11th July", "band": "High Regard", "time": "15:35 - 16:10", "start": 935, "end": 970}, {"stage": "Forest Sessions", "day": "Saturday 11th July", "band": "Arcane Roots (acoustic)", "time": "16:55 - 17:45", "start": 1015, "end": 1065}, {"stage": "Forest Sessions", "day": "Saturday 11th July", "band": "A", "time": "18:35 - 19:25", "start": 1115, "end": 1165}, {"stage": "Forest Sessions", "day": "Saturday 11th July", "band": "Caroles Daughter", "time": "20:25 - 21:10", "start": 1225, "end": 1270}, {"stage": "Forest Sessions", "day": "Saturday 11th July", "band": "Bat Sabbath", "time": "21:40 - 22:40", "start": 1300, "end": 1360}, {"stage": "Forest Sessions", "day": "Saturday 11th July", "band": "Frozemode (Silent Disco Live)", "time": "23:25 - 00:15", "start": 1405, "end": 1455}, {"stage": "The Word", "day": "Thursday 9th July", "band": "Kids Yoga", "time": "09:00 - 09:30", "start": 540, "end": 570}, {"stage": "The Word", "day": "Thursday 9th July", "band": "The Music Man", "time": "10:50 - 11:30", "start": 650, "end": 690}, {"stage": "The Word", "day": "Thursday 9th July", "band": "Marky Jay (Circus & Puppetry)", "time": "11:55 - 12:30", "start": 715, "end": 750}, {"stage": "The Word", "day": "Thursday 9th July", "band": "Loz Because Kids", "time": "12:55 - 13:25", "start": 775, "end": 805}, {"stage": "The Word", "day": "Thursday 9th July", "band": "Junk Jodie: Bee Insect-AZING", "time": "13:40 - 14:10", "start": 820, "end": 850}, {"stage": "The Word", "day": "Thursday 9th July", "band": "Pop Punk Playhouse", "time": "14:25 - 15:15", "start": 865, "end": 915}, {"stage": "The Word", "day": "Thursday 9th July", "band": "The Backhand Jags (Kids Moshpit)", "time": "15:35 - 16:15", "start": 935, "end": 975}, {"stage": "The Word", "day": "Thursday 9th July", "band": "Richard Massara - MC", "time": "19:00 - 19:20", "start": 1140, "end": 1160}, {"stage": "The Word", "day": "Thursday 9th July", "band": "New Act Showcase", "time": "19:20 - 20:00", "start": 1160, "end": 1200}, {"stage": "The Word", "day": "Thursday 9th July", "band": "Pete Selwood", "time": "20:00 - 20:15", "start": 1200, "end": 1215}, {"stage": "The Word", "day": "Thursday 9th July", "band": "Hannah Byczkowski", "time": "20:15 - 20:35", "start": 1215, "end": 1235}, {"stage": "The Word", "day": "Thursday 9th July", "band": "Louise Atkinson", "time": "20:35 - 20:55", "start": 1235, "end": 1255}, {"stage": "The Word", "day": "Thursday 9th July", "band": "Erika Ehler", "time": "20:55 - 21:15", "start": 1255, "end": 1275}, {"stage": "The Word", "day": "Thursday 9th July", "band": "Dave Longley", "time": "21:15 - 21:35", "start": 1275, "end": 1295}, {"stage": "The Word", "day": "Thursday 9th July", "band": "Rachel Fairburn", "time": "23:00 - 23:30", "start": 1380, "end": 1410}, {"stage": "The Word", "day": "Friday 10th July", "band": "Kids Yoga", "time": "09:00 - 09:30", "start": 540, "end": 570}, {"stage": "The Word", "day": "Friday 10th July", "band": "Solid Gold Fitness - Kids", "time": "09:45 - 10:15", "start": 585, "end": 615}, {"stage": "The Word", "day": "Friday 10th July", "band": "Junk Jodie: FASHION-IFFICENT", "time": "11:45 - 12:15", "start": 705, "end": 735}, {"stage": "The Word", "day": "Friday 10th July", "band": "Lucas Jet Circus Show", "time": "12:30 - 13:30", "start": 750, "end": 810}, {"stage": "The Word", "day": "Friday 10th July", "band": "Pop Punk Playouse", "time": "13:45 - 14:55", "start": 825, "end": 895}, {"stage": "The Word", "day": "Friday 10th July", "band": "TV Party Tonight (TV Theme Tune Band)", "time": "15:15 - 16:00", "start": 915, "end": 960}, {"stage": "The Word", "day": "Friday 10th July", "band": "Richard Massara - MC", "time": "19:00 - 19:20", "start": 1140, "end": 1160}, {"stage": "The Word", "day": "Friday 10th July", "band": "New Act Showcase", "time": "19:20 - 20:00", "start": 1160, "end": 1200}, {"stage": "The Word", "day": "Friday 10th July", "band": "Joe Kiley", "time": "20:00 - 20:00", "start": 1200, "end": 1215}, {"stage": "The Word", "day": "Friday 10th July", "band": "Joe Riley", "time": "20:00 - 20:15", "start": 1200, "end": 1215}, {"stage": "The Word", "day": "Friday 10th July", "band": "Chloe Reynolds", "time": "20:15 - 20:35", "start": 1215, "end": 1235}, {"stage": "The Word", "day": "Friday 10th July", "band": "Kate Hammer", "time": "20:35 - 20:55", "start": 1235, "end": 1255}, {"stage": "The Word", "day": "Friday 10th July", "band": "Billy Kirkwood", "time": "20:55 - 21:15", "start": 1255, "end": 1275}, {"stage": "The Word", "day": "Friday 10th July", "band": "Pierre Novellie", "time": "21:15 - 21:35", "start": 1275, "end": 1295}, {"stage": "The Word", "day": "Friday 10th July", "band": "The Dark Room", "time": "23:05 - 23:30", "start": 1385, "end": 1410}, {"stage": "The Word", "day": "Saturday 11th July", "band": "Kids Yoga", "time": "09:00 - 09:25", "start": 540, "end": 565}, {"stage": "The Word", "day": "Saturday 11th July", "band": "Solid Gold Fitness - Kids", "time": "09:40 - 10:10", "start": 580, "end": 610}, {"stage": "The Word", "day": "Saturday 11th July", "band": "Molly Kidz TV", "time": "11:35 - 12:35", "start": 695, "end": 755}, {"stage": "The Word", "day": "Saturday 11th July", "band": "Drag Queen Story Hour", "time": "12:50 - 13:50", "start": 770, "end": 830}, {"stage": "The Word", "day": "Saturday 11th July", "band": "Pop Punk Playhouse", "time": "15:15 - 16:15", "start": 915, "end": 975}, {"stage": "The Word", "day": "Saturday 11th July", "band": "The Ogretones", "time": "16:40 - 17:25", "start": 1000, "end": 1045}, {"stage": "The Word", "day": "Saturday 11th July", "band": "Andrew Neil (The History of Punk)", "time": "17:55 - 18:55", "start": 1075, "end": 1135}, {"stage": "The Word", "day": "Saturday 11th July", "band": "Richard Massara - MC", "time": "19:00 - 19:20", "start": 1140, "end": 1160}, {"stage": "The Word", "day": "Saturday 11th July", "band": "New Act Showcase", "time": "19:20 - 20:00", "start": 1160, "end": 1200}, {"stage": "The Word", "day": "Saturday 11th July", "band": "Maxine Wade", "time": "20:00 - 20:15", "start": 1200, "end": 1215}, {"stage": "The Word", "day": "Saturday 11th July", "band": "Joe Jacobs", "time": "20:15 - 20:35", "start": 1215, "end": 1235}, {"stage": "The Word", "day": "Saturday 11th July", "band": "Daisy Earl", "time": "20:35 - 20:55", "start": 1235, "end": 1255}, {"stage": "The Word", "day": "Saturday 11th July", "band": "Raj Poojara", "time": "20:55 - 21:15", "start": 1255, "end": 1275}, {"stage": "The Word", "day": "Saturday 11th July", "band": "Hayley Ellis", "time": "21:15 - 21:35", "start": 1275, "end": 1295}, {"stage": "The Word", "day": "Saturday 11th July", "band": "Jamali Maddix", "time": "23:00 - 23:30", "start": 1380, "end": 1410}, {"stage": "Camp Turner", "day": "Thursday 9th July", "band": "Ashaine White", "time": "23:00 - 23:30", "start": 1380, "end": 1410}, {"stage": "Camp Turner", "day": "Thursday 9th July", "band": "Beauty Sleep", "time": "23:30 - 00:00", "start": 1410, "end": 1440}, {"stage": "Camp Turner", "day": "Thursday 9th July", "band": "BUDS.", "time": "00:00 - 00:30", "start": 1440, "end": 1470}, {"stage": "Camp Turner", "day": "Friday 10th July", "band": "truck", "time": "23:00 - 23:30", "start": 1380, "end": 1410}, {"stage": "Camp Turner", "day": "Friday 10th July", "band": "B-Sydes", "time": "23:30 - 00:00", "start": 1410, "end": 1440}, {"stage": "Camp Turner", "day": "Friday 10th July", "band": "Mexican Dave & Friends", "time": "00:00 - 01:00", "start": 1440, "end": 1500}, {"stage": "Camp Turner", "day": "Saturday 11th July", "band": "Sam Tucker? & Becky!", "time": "23:00 - 23:30", "start": 1380, "end": 1410}, {"stage": "Camp Turner", "day": "Saturday 11th July", "band": "Emilia Slade", "time": "23:30 - 00:00", "start": 1410, "end": 1440}, {"stage": "Camp Turner", "day": "Saturday 11th July", "band": "GUTS.", "time": "00:00 - 00:30", "start": 1440, "end": 1470}, {"stage": "Camp Frabbit", "day": "Thursday 9th July", "band": "TBC", "time": "23:10 - 23:30", "start": 1390, "end": 1410}, {"stage": "Camp Frabbit", "day": "Thursday 9th July", "band": "TBC", "time": "23:30 - 23:50", "start": 1410, "end": 1430}, {"stage": "Camp Frabbit", "day": "Thursday 9th July", "band": "TBC", "time": "23:50 - 00:10", "start": 1430, "end": 1450}, {"stage": "Camp Frabbit", "day": "Thursday 9th July", "band": "TBC", "time": "00:10 - 00:30", "start": 1450, "end": 1470}, {"stage": "Camp Frabbit", "day": "Thursday 9th July", "band": "TBC", "time": "00:30 - 01:00", "start": 1470, "end": 1500}, {"stage": "Camp Frabbit", "day": "Thursday 9th July", "band": "TBC", "time": "01:00 - 01:30", "start": 1500, "end": 1530}, {"stage": "Camp Frabbit", "day": "Friday 10th July", "band": "TBC", "time": "23:10 - 23:30", "start": 1390, "end": 1410}, {"stage": "Camp Frabbit", "day": "Friday 10th July", "band": "TBC", "time": "23:30 - 23:50", "start": 1410, "end": 1430}, {"stage": "Camp Frabbit", "day": "Friday 10th July", "band": "TBC", "time": "23:50 - 00:10", "start": 1430, "end": 1450}, {"stage": "Camp Frabbit", "day": "Friday 10th July", "band": "TBC", "time": "00:10 - 00:30", "start": 1450, "end": 1470}, {"stage": "Camp Frabbit", "day": "Friday 10th July", "band": "TBC", "time": "00:30 - 01:00", "start": 1470, "end": 1500}, {"stage": "Camp Frabbit", "day": "Friday 10th July", "band": "TBC", "time": "01:00 - 01:30", "start": 1500, "end": 1530}, {"stage": "Camp Frabbit", "day": "Saturday 11th July", "band": "TBC", "time": "23:10 - 23:30", "start": 1390, "end": 1410}, {"stage": "Camp Frabbit", "day": "Saturday 11th July", "band": "TBC", "time": "23:30 - 23:50", "start": 1410, "end": 1430}, {"stage": "Camp Frabbit", "day": "Saturday 11th July", "band": "TBC", "time": "23:50 - 00:10", "start": 1430, "end": 1450}, {"stage": "Camp Frabbit", "day": "Saturday 11th July", "band": "TBC", "time": "00:10 - 00:30", "start": 1450, "end": 1470}, {"stage": "Camp Frabbit", "day": "Saturday 11th July", "band": "TBC", "time": "00:30 - 01:00", "start": 1470, "end": 1500}, {"stage": "Camp Frabbit", "day": "Saturday 11th July", "band": "TBC", "time": "01:00 - 01:30", "start": 1500, "end": 1530}, {"stage": "UTB Manchester Campsite Stage", "day": "Thursday 9th July", "band": "TBC", "time": "23:10 - 23:35", "start": 1390, "end": 1415}, {"stage": "UTB Manchester Campsite Stage", "day": "Thursday 9th July", "band": "TBC", "time": "23:35 - 00:00", "start": 1415, "end": 1440}, {"stage": "UTB Manchester Campsite Stage", "day": "Thursday 9th July", "band": "TBC", "time": "00:00 - 00:30", "start": 1440, "end": 1470}, {"stage": "UTB Manchester Campsite Stage", "day": "Thursday 9th July", "band": "TBC", "time": "00:30 - 01:00", "start": 1470, "end": 1500}, {"stage": "UTB Manchester Campsite Stage", "day": "Friday 10th July", "band": "TBC", "time": "23:10 - 23:35", "start": 1390, "end": 1415}, {"stage": "UTB Manchester Campsite Stage", "day": "Friday 10th July", "band": "TBC", "time": "23:35 - 00:00", "start": 1415, "end": 1440}, {"stage": "UTB Manchester Campsite Stage", "day": "Friday 10th July", "band": "TBC", "time": "00:00 - 00:30", "start": 1440, "end": 1470}, {"stage": "UTB Manchester Campsite Stage", "day": "Friday 10th July", "band": "TBC", "time": "00:30 - 01:00", "start": 1470, "end": 1500}, {"stage": "UTB Manchester Campsite Stage", "day": "Saturday 11th July", "band": "TBC", "time": "23:10 - 23:35", "start": 1390, "end": 1415}, {"stage": "UTB Manchester Campsite Stage", "day": "Saturday 11th July", "band": "TBC", "time": "23:35 - 00:00", "start": 1415, "end": 1440}, {"stage": "UTB Manchester Campsite Stage", "day": "Saturday 11th July", "band": "TBC", "time": "00:00 - 00:30", "start": 1440, "end": 1470}, {"stage": "UTB Manchester Campsite Stage", "day": "Saturday 11th July", "band": "TBC", "time": "00:30 - 01:00", "start": 1470, "end": 1500}, {"stage": "V.I.Paradise Stage (VIP Campsite)", "day": "Thursday 9th July", "band": "TBC", "time": "23:30 - 00:00", "start": 1410, "end": 1440}, {"stage": "V.I.Paradise Stage (VIP Campsite)", "day": "Thursday 9th July", "band": "TBC", "time": "00:00 - 00:30", "start": 1440, "end": 1470}, {"stage": "V.I.Paradise Stage (VIP Campsite)", "day": "Friday 10th July", "band": "TBC", "time": "00:25 - 00:55", "start": 1465, "end": 1495}, {"stage": "V.I.Paradise Stage (VIP Campsite)", "day": "Saturday 11th July", "band": "TBC", "time": "23:30 - 00:00", "start": 1410, "end": 1440}]}</script>
+<script>
+(function(){
+  "use strict";
+
+  const RAW = JSON.parse(document.getElementById('lineup-data').textContent);
+  const DAYS = RAW.days;
+  const STAGES = RAW.stages;
+  const EVENTS = RAW.events;
+
+  const SHORT_LABEL = {
+    "Main Stage":"MAIN STAGE",
+    "The Cave":"THE CAVE",
+    "The Axiom":"THE AXIOM",
+    "The Marshall Stage":"MARSHALL",
+    "Forest Sessions":"FOREST SESH",
+    "The Word":"THE WORD",
+    "Camp Turner":"CAMP TURNER",
+    "Camp Frabbit":"CAMP FRABBIT",
+    "UTB Manchester Campsite Stage":"UTB STAGE",
+    "V.I.Paradise Stage (VIP Campsite)":"VIP PARADISE"
+  };
+  const DAY_SHORT = {
+    "Thursday 9th July":"THU 9",
+    "Friday 10th July":"FRI 10",
+    "Saturday 11th July":"SAT 11"
+  };
+  const STAGE_COLOR = {
+    "Main Stage":"var(--pink)",
+    "The Cave":"var(--blue)",
+    "The Axiom":"var(--yellow)",
+    "The Marshall Stage":"var(--orange)",
+    "Forest Sessions":"var(--green)",
+    "The Word":"var(--violet)",
+    "Camp Turner":"var(--teal)",
+    "Camp Frabbit":"var(--red)",
+    "UTB Manchester Campsite Stage":"var(--slate)",
+    "V.I.Paradise Stage (VIP Campsite)":"var(--gold)"
+  };
+  const DARK_TEXT_STAGES = new Set(["The Axiom"]);
+
+  const MIN_START = 540; // 09:00
+  const MAX_END = 1620;  // 03:00 next day
+  const PX_PER_MIN = 1.65;
+  const BODY_HEIGHT = (MAX_END - MIN_START) * PX_PER_MIN;
+
+  let currentDay = DAYS[0];
+  let picks = new Set();   // set of event ids
+  let clashIds = new Set();
+  let searchTerm = "";
+
+  function eventId(e){
+    return [e.day, e.stage, e.time, e.band].join("||");
+  }
+  EVENTS.forEach(e => { e.id = eventId(e); });
+
+  // ---------- storage (saved locally on this device/browser, fully offline) ----------
+  const STORAGE_KEY = "trees_2026_picks";
+  function loadPicks(){
+    try{
+      const raw = window.localStorage.getItem(STORAGE_KEY);
+      if (raw){ picks = new Set(JSON.parse(raw)); }
+    }catch(err){ /* private browsing or first run — start empty */ }
+    recomputeClashes();
+    render();
+  }
+  function savePicks(){
+    try{
+      window.localStorage.setItem(STORAGE_KEY, JSON.stringify([...picks]));
+    }catch(err){ console.warn("Could not save picks locally", err); }
+  }
+
+  // ---------- clash detection ----------
+  function recomputeClashes(){
+    clashIds = new Set();
+    DAYS.forEach(day => {
+      const pickedToday = EVENTS.filter(e => picks.has(e.id) && e.day === day)
+                                 .sort((a,b)=> a.start - b.start);
+      for (let i=0;i<pickedToday.length;i++){
+        for (let j=i+1;j<pickedToday.length;j++){
+          const a = pickedToday[i], b = pickedToday[j];
+          if (a.start < b.end && b.start < a.end){
+            clashIds.add(a.id); clashIds.add(b.id);
+          }
+        }
+      }
+    });
+  }
+
+  // ---------- build static chrome ----------
+  function buildDayTabs(){
+    const wrap = document.getElementById('dayTabs');
+    wrap.innerHTML = "";
+    DAYS.forEach(day => {
+      const btn = document.createElement('button');
+      btn.className = 'day-tab' + (day === currentDay ? ' active' : '');
+      btn.textContent = DAY_SHORT[day] || day;
+      btn.addEventListener('click', () => {
+        currentDay = day;
+        buildDayTabs();
+        renderColumns();
+      });
+      wrap.appendChild(btn);
+    });
+  }
+
+  function buildLegend(){
+    const wrap = document.getElementById('legend');
+    wrap.innerHTML = "";
+    STAGES.forEach(stage => {
+      const chip = document.createElement('div');
+      chip.className = 'legend-chip';
+      chip.tabIndex = 0;
+      chip.innerHTML = `<span class="legend-dot" style="background:${STAGE_COLOR[stage]}"></span>${SHORT_LABEL[stage]}`;
+      wrap.appendChild(chip);
+    });
+  }
+
+  function buildTimeAxis(){
+    const axis = document.getElementById('timeAxis');
+    axis.innerHTML = '<div class="axis-spacer"></div>';
+    const inner = document.createElement('div');
+    inner.style.position = 'relative';
+    inner.style.height = BODY_HEIGHT + 'px';
+    for (let m = MIN_START; m <= MAX_END; m += 60){
+      const label = document.createElement('div');
+      label.className = 'hour-label';
+      label.style.top = ((m - MIN_START) * PX_PER_MIN) + 'px';
+      let hour = Math.floor((m % 1440) / 60);
+      let label_text = (hour < 10 ? '0'+hour : hour) + ':00';
+      label.textContent = label_text;
+      inner.appendChild(label);
+    }
+    axis.appendChild(inner);
+  }
+
+  // ---------- render schedule columns for current day ----------
+  function renderColumns(){
+    const wrap = document.getElementById('stageColumns');
+    wrap.innerHTML = "";
+    STAGES.forEach(stage => {
+      const col = document.createElement('div');
+      col.className = 'stage-col';
+
+      const header = document.createElement('div');
+      header.className = 'stage-col-header';
+      header.style.background = STAGE_COLOR[stage];
+      header.style.color = DARK_TEXT_STAGES.has(stage) ? 'var(--ink)' : '#fff';
+      header.textContent = SHORT_LABEL[stage];
+      col.appendChild(header);
+
+      const body = document.createElement('div');
+      body.className = 'stage-col-body';
+      body.style.height = BODY_HEIGHT + 'px';
+
+      const dayEvents = EVENTS.filter(e => e.stage === stage && e.day === currentDay);
+      dayEvents.forEach(e => {
+        const block = document.createElement('div');
+        const isTbc = e.band.trim().toUpperCase() === 'TBC';
+        block.className = 'event-block' + (isTbc ? ' tbc' : '');
+        if (picks.has(e.id)) block.classList.add('picked');
+        if (clashIds.has(e.id)) block.classList.add('clash');
+        const top = (e.start - MIN_START) * PX_PER_MIN;
+        let height = (e.end - e.start) * PX_PER_MIN;
+        if (height < 20) height = 20;
+        block.style.top = top + 'px';
+        block.style.height = height + 'px';
+        if (!picks.has(e.id)){
+          block.style.background = STAGE_COLOR[stage];
+          block.style.color = DARK_TEXT_STAGES.has(stage) ? 'var(--ink)' : '#fff';
+        }
+        block.dataset.id = e.id;
+        block.dataset.band = e.band.toLowerCase();
+        block.tabIndex = isTbc ? -1 : 0;
+        block.title = isTbc ? (e.band + " — lineup not yet announced") : (e.band + " · " + e.time + " · " + stage);
+        block.innerHTML = `<span class="event-band">${escapeHtml(e.band)}</span><span class="event-time">${e.time}</span>`;
+
+        if (!isTbc){
+          block.addEventListener('click', () => togglePick(e.id));
+          block.addEventListener('keydown', (ev) => {
+            if (ev.key === 'Enter' || ev.key === ' '){ ev.preventDefault(); togglePick(e.id); }
+          });
+        }
+        if (searchTerm && !e.band.toLowerCase().includes(searchTerm)){
+          block.classList.add('dimmed');
+        }
+        body.appendChild(block);
+      });
+
+      col.appendChild(body);
+      wrap.appendChild(col);
+    });
+  }
+
+  function escapeHtml(str){
+    const d = document.createElement('div');
+    d.textContent = str;
+    return d.innerHTML;
+  }
+
+  // ---------- picks / lineup panel ----------
+  function togglePick(id){
+    if (picks.has(id)) picks.delete(id); else picks.add(id);
+    recomputeClashes();
+    savePicks();
+    render();
+  }
+
+  function renderCounts(){
+    document.getElementById('pickCount').textContent = picks.size;
+    document.getElementById('fabCount').textContent = picks.size;
+  }
+
+  function renderClashBanner(){
+    const banner = document.getElementById('clashBanner');
+    if (clashIds.size === 0){
+      banner.classList.add('hidden');
+      banner.textContent = "";
+      return;
+    }
+    const n = clashIds.size;
+    banner.classList.remove('hidden');
+    banner.textContent = `⚡ You've got ${n} clashing pick${n>1?'s':''} — overlapping sets are marked in red.`;
+  }
+
+  function renderLineupPanel(){
+    const list = document.getElementById('lineupList');
+    list.innerHTML = "";
+    if (picks.size === 0){
+      list.innerHTML = '<p class="lineup-empty">No bands picked yet.<br><br>Tap any slot on the grid to add it to your lineup — your picks are saved automatically.</p>';
+      return;
+    }
+    DAYS.forEach(day => {
+      const dayPicks = EVENTS.filter(e => picks.has(e.id) && e.day === day).sort((a,b)=>a.start-b.start);
+      if (dayPicks.length === 0) return;
+      const group = document.createElement('div');
+      group.className = 'lineup-day-group';
+      const title = document.createElement('div');
+      title.className = 'lineup-day-title';
+      title.textContent = (DAY_SHORT[day]||day) + ` · ${dayPicks.length} band${dayPicks.length>1?'s':''}`;
+      group.appendChild(title);
+      dayPicks.forEach(e => {
+        const item = document.createElement('div');
+        item.className = 'lineup-item' + (clashIds.has(e.id) ? ' clash' : '');
+        item.innerHTML = `
+          <span class="lineup-dot" style="background:${STAGE_COLOR[e.stage]}"></span>
+          <div class="lineup-item-info">
+            <div class="lineup-item-band">${escapeHtml(e.band)}</div>
+            <div class="lineup-item-meta">${e.time} · ${SHORT_LABEL[e.stage]}${clashIds.has(e.id) ? ' · CLASH' : ''}</div>
+          </div>
+          <button class="lineup-remove" aria-label="Remove ${escapeHtml(e.band)}">✕</button>
+        `;
+        item.querySelector('.lineup-remove').addEventListener('click', () => togglePick(e.id));
+        group.appendChild(item);
+      });
+      list.appendChild(group);
+    });
+  }
+
+  function render(){
+    renderColumns();
+    renderCounts();
+    renderClashBanner();
+    renderLineupPanel();
+  }
+
+  // ---------- search ----------
+  document.getElementById('searchInput').addEventListener('input', (ev) => {
+    searchTerm = ev.target.value.trim().toLowerCase();
+    document.querySelectorAll('.event-block').forEach(block => {
+      if (searchTerm && !block.dataset.band.includes(searchTerm)){
+        block.classList.add('dimmed');
+      } else {
+        block.classList.remove('dimmed');
+      }
+    });
+    document.querySelectorAll('.legend-chip').forEach((chip, i) => {
+      const stage = STAGES[i];
+      const hasMatch = EVENTS.some(e => e.stage === stage && e.band.toLowerCase().includes(searchTerm));
+      chip.classList.toggle('dimmed', !!searchTerm && !hasMatch);
+    });
+  });
+
+  // ---------- clear picks ----------
+  document.getElementById('clearPicks').addEventListener('click', () => {
+    if (picks.size === 0) return;
+    picks.clear();
+    recomputeClashes();
+    savePicks();
+    render();
+  });
+
+  // ---------- export ----------
+  function generateLineupText(){
+    if (picks.size === 0){
+      return "No bands picked yet — open the planner and tap some slots first!";
+    }
+    const lines = ["MY 2000TREES LINEUP", "Thu 9 - Sat 11 July", ""];
+    DAYS.forEach(day => {
+      const dayPicks = EVENTS.filter(e => picks.has(e.id) && e.day === day).sort((a,b)=>a.start-b.start);
+      if (dayPicks.length === 0) return;
+      lines.push(`${(DAY_SHORT[day]||day).toUpperCase()} — ${dayPicks.length} band${dayPicks.length>1?'s':''}`);
+      dayPicks.forEach(e => {
+        const clashMark = clashIds.has(e.id) ? "  [CLASH]" : "";
+        lines.push(`  ${e.time}  ${e.band} — ${SHORT_LABEL[e.stage]}${clashMark}`);
+      });
+      lines.push("");
+    });
+    if (clashIds.size > 0){
+      lines.push(`⚡ ${clashIds.size} pick(s) clash with another pick — check times above.`);
+    }
+    return lines.join("\n").trim();
+  }
+
+  const exportOverlay = document.getElementById('exportOverlay');
+  const exportModal = document.getElementById('exportModal');
+  const exportTextArea = document.getElementById('exportText');
+  const exportStatus = document.getElementById('exportStatus');
+
+  function openExportModal(){
+    exportTextArea.value = generateLineupText();
+    exportStatus.textContent = "";
+    exportOverlay.classList.add('show');
+    exportModal.classList.add('show');
+    setTimeout(() => { exportTextArea.focus(); exportTextArea.select(); }, 50);
+  }
+  function closeExportModal(){
+    exportOverlay.classList.remove('show');
+    exportModal.classList.remove('show');
+  }
+  document.getElementById('exportBtn').addEventListener('click', openExportModal);
+  document.getElementById('closeExport').addEventListener('click', closeExportModal);
+  exportOverlay.addEventListener('click', closeExportModal);
+
+  document.getElementById('copyExportBtn').addEventListener('click', async () => {
+    const text = exportTextArea.value;
+    let copied = false;
+    try{
+      if (navigator.clipboard && navigator.clipboard.writeText){
+        await navigator.clipboard.writeText(text);
+        copied = true;
+      }
+    }catch(err){ /* fall through to legacy method */ }
+    if (!copied){
+      try{
+        exportTextArea.focus();
+        exportTextArea.select();
+        copied = document.execCommand('copy');
+      }catch(err){ copied = false; }
+    }
+    exportStatus.textContent = copied
+      ? "✓ Copied to clipboard!"
+      : "Couldn't auto-copy — the text above is selected, just copy it manually.";
+  });
+
+  // ---------- lineup panel toggle ----------
+  const panel = document.getElementById('lineupPanel');
+  const overlay = document.getElementById('overlay');
+  function openPanel(){ panel.classList.add('open'); overlay.classList.add('show'); }
+  function closePanel(){ panel.classList.remove('open'); overlay.classList.remove('show'); }
+  document.getElementById('lineupToggle').addEventListener('click', openPanel);
+  document.getElementById('closeLineup').addEventListener('click', closePanel);
+  overlay.addEventListener('click', closePanel);
+
+  // ---------- init ----------
+  buildDayTabs();
+  buildLegend();
+  buildTimeAxis();
+  loadPicks();
+})();
+</script>
+</body>
+</html>
